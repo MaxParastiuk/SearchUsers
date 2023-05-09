@@ -1,27 +1,37 @@
 import Image from "next/image";
-import Link from "next/link";
+import logo from "../../public/user-logo.png";
+import SearchForm from "./SearchForm";
+import ActiveLink from "./ActiveLink";
 
 function Header() {
 	return (
-		<header className='flex items-center px-4 md:px-12 py-2 justify-between fixed top-0 w-full bg-white z-50 shadow'>
-			<Link href='/'>
-				{/* <Image
-					src='https://i.ibb.co/McdzmYG/logo-removebg-preview-new.png'
-					width={70}
-					height={70}
-					alt='Logo'
-				/> */}
-			</Link>
-
-			<div className='flex items-center space-x-2.5 text-sm'>
-				<button className='button bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-black'>
-					Log in
-				</button>
-				<button className='button bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white hover:border-transparent'>
-					Sign up
-				</button>
+		<>
+			<div className='min-h-full '>
+				<nav className='z-10 bg-gray-400'>
+					<div className='mx-24 max-[640px]:mx-6 min-[320px]:py-6 max-w-full px-4 sm:px-6 lg:px-8'>
+						<div className='flex min-[320px]:gap-y-5 lg:flex-row min-[320px]:flex-col h-full items-center justify-between'>
+							<div className='flex items-center  min-[320px]:flex-col'>
+								<div className='flex-shrink-0'>
+									<Image
+										width={800}
+										height={500}
+										className='h-16 w-16'
+										src={logo.src}
+										alt='user-logo'
+									/>
+								</div>
+								<div className='md:block'>
+									<div className='ml-10 flex items-baseline space-x-4'>
+										<ActiveLink to='/'>Users</ActiveLink>
+									</div>
+								</div>
+							</div>
+							<SearchForm />
+						</div>
+					</div>
+				</nav>
 			</div>
-		</header>
+		</>
 	);
 }
 
