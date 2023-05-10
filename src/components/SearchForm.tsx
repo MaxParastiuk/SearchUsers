@@ -1,5 +1,3 @@
-const SearchForm = () => {
-	return <input></input>;
-};
+const SearchForm = () => {};
 
 export default SearchForm;
